@@ -289,6 +289,7 @@ namespace IxMilia.Converters
 
         public static async Task<XElement> ToXElement(this DxfEntity entity, DxfToSvgConverterOptions options, Dictionary<string, DxfDimStyle> dimStyles, DxfDrawingUnits drawingUnits, DxfUnitFormat unitFormat, int unitPrecision)
         {
+            
             // elements are simply flattened in the z plane; the world transform in the main function handles the rest
             switch (entity)
             {
@@ -313,12 +314,20 @@ namespace IxMilia.Converters
                 case DxfSolid solid:
                     return solid.ToXElement();
                 case DxfSpline spline:
-                    return spline.ToXElement();
+                    try
+                    {
+                        return spline.ToXElement();
+                    }
+                    catch (Exception) { }
+                    break;
                 case DxfText text:
                     return text.ToXElement();
                 default:
                     return null;
             }
+            
+
+            return new XElement(entity.GetType().Name);
         }
 
         public static XElement ToXElement(this DxfArc arc)

@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using IxMilia.Dwg.Objects;
 using IxMilia.Dxf;
 using IxMilia.Dxf.Entities;
 using IxMilia.Pdf;
