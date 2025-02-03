@@ -27,15 +27,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IxMilia.Dxf\src\IxMilia.Dxf\IxMilia.Dxf.csproj" PrivateAssets="all" />
-    <ProjectReference Include="..\IxMilia.Pdf\src\IxMilia.Pdf\IxMilia.Pdf.csproj" PrivateAssets="all" />
+    <PackageReference Include="IxMilia.Dxf" Version="0.8.4" />
   </ItemGroup>
 
   <Target Name="IncludeP2POutput">
     <ItemGroup>
-      <BuildOutputInPackage Include="$(OutputPath)IxMilia.Dwg.dll" />
-      <BuildOutputInPackage Include="$(OutputPath)IxMilia.Dxf.dll" />
-      <BuildOutputInPackage Include="$(OutputPath)IxMilia.Pdf.dll" />
+      <!--<BuildOutputInPackage Include="$(OutputPath)IxMilia.Dwg.dll" />-->
+      <!--<BuildOutputInPackage Include="$(OutputPath)IxMilia.Dxf.dll" />
+      <BuildOutputInPackage Include="$(OutputPath)IxMilia.Pdf.dll" />-->
     </ItemGroup>
   </Target>
 
